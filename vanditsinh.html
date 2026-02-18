@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSD Professional Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="vanditsinh.css">
+    <script src="vanditsinh.js"></script>
+</head>
+
+<body>
+
+    <div class="particles" id="particles"></div>
+
+    <div class="quiz-container">
+        <div class="content-wrapper">
+            <div id="auth-container">
+                <h1>FSD Quiz Portal</h1>
+                <p class="auth-subtitle">Login or sign up to start your quiz session.</p>
+
+                <div class="auth-tabs">
+                    <button id="login-tab" class="auth-tab active" type="button">Login</button>
+                    <button id="signup-tab" class="auth-tab" type="button">Sign Up</button>
+                </div>
+
+                <form id="login-form" class="auth-form">
+                    <div class="input-group">
+                        <label for="login-email">Email</label>
+                        <input id="login-email" class="input-field" type="email" autocomplete="email"
+                            placeholder="you@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="login-password">Password</label>
+                        <div class="password-row">
+                            <input id="login-password" class="input-field" type="password"
+                                autocomplete="current-password" placeholder="••••••" required>
+                            <button class="toggle-pass-btn" type="button" data-target="login-password">Show</button>
+                        </div>
+                    </div>
+                    <button class="action-btn auth-submit" type="submit">Login</button>
+                </form>
+
+                <form id="signup-form" class="auth-form hidden">
+                    <div class="input-group">
+                        <label for="signup-name">Full Name</label>
+                        <input id="signup-name" class="input-field" type="text" autocomplete="name"
+                            placeholder="Your full name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-email">Email</label>
+                        <input id="signup-email" class="input-field" type="email" autocomplete="email"
+                            placeholder="you@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-password">Password</label>
+                        <div class="password-row">
+                            <input id="signup-password" class="input-field" type="password" autocomplete="new-password"
+                                placeholder="Min 6 characters" required>
+                            <button class="toggle-pass-btn" type="button" data-target="signup-password">Show</button>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input id="signup-confirm-password" class="input-field" type="password"
+                            autocomplete="new-password" placeholder="Re-enter password" required>
+                    </div>
+                    <button class="action-btn auth-submit" type="submit">Create Account</button>
+                </form>
+
+                <p id="auth-message" class="status-message hidden"></p>
+            </div>
+
+            <div id="quiz-shell" class="quiz-shell hidden">
+                <div class="header-bar">
+                    <div class="header-left">
+                        <h1>FSD Quiz</h1>
+                        <p class="welcome-line">Welcome, <span id="active-user-name">Learner</span></p>
+                    </div>
+                    <div class="header-right">
+                        <button id="logout-btn" class="ghost-btn" type="button">Logout</button>
+                        <div id="timer-display" class="timer-display">⏱ <span id="time-left">30</span>s</div>
+                    </div>
+                </div>
+
+                <div class="meta-row">
+                    <span id="question-progress">Question 1 / 1</span>
+                    <span id="answered-progress">Answered 0 / 0</span>
+                </div>
+
+                <div id="progress-dots" class="progress-dots"></div>
+
+                <div class="timer-progress-bg">
+                    <div id="timer-bar" class="timer-progress-bar"></div>
+                </div>
+
+                <p id="quiz-note" class="quiz-note"></p>
+
+                <div id="question-container">
+                    <div id="question" class="question"></div>
+                    <div id="answer-buttons" class="btn-grid"></div>
+
+                    <div class="nav-controls">
+                        <button id="prev-btn" class="action-btn" type="button">← Previous</button>
+                        <button id="next-btn" class="action-btn" type="button">Next →</button>
+                        <button id="finish-btn" class="action-btn hidden" type="button">🏁 Finish</button>
+                    </div>
+
+                    <p class="keyboard-hint">Use <kbd>1</kbd>-<kbd>4</kbd> to answer · <kbd>←</kbd> <kbd>→</kbd> to
+                        navigate</p>
+                </div>
+
+                <div id="result-container" class="hidden">
+                    <h2>🎉 Quiz Completed!</h2>
+                    <div id="score-display">0%</div>
+                    <p class="result-details">You answered <span id="score-text">0/0</span> questions correctly.</p>
+                    <p id="result-message" class="result-details"></p>
+                    <button id="restart-btn" class="action-btn" type="button">🔄 Restart Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
